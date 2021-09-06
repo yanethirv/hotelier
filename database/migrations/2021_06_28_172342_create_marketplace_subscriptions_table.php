@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateMarketplaceSubscriptionsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('marketplace_subscriptions', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('subscription_name');
+            $table->text('description');
+            $table->float('amount', 8, 2);
+            $table->string('price');
+            $table->foreignId('room_range_id')->constrained('room_ranges');
+            $table->boolean('active')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('marketplace_subscriptions');
+    }
+}

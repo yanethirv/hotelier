@@ -1,0 +1,5 @@
+ln -s /home/hotelierhub/hotelierhub/storage/app/public /home/hotelierhub/public_html/
+
+https://www.youtube.com/watch?v=wslo1Ataa_Q
+
+ln -s -f --no-dereference /home/hotelierhub/hotelierhub/storage/app/public /home/hotelierhub/public_html/storage
